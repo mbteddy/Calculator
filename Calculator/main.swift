@@ -104,15 +104,34 @@ func subTup(x1: Int, y1: Int, x2: Int, y2: Int) -> (x: Int, y: Int) {
 print(addTup(4, y1: 3, x2: 5, y2: 2))
 print(subTup(4, y1: 3, x2: 5, y2: 2))
 
-var point3 = [5: "x", 3: "y",]
+var point3 = ["x": 5, "y": 3]
+var point4 = ["x": 3, "y": 6]
 
-func addDic(dic1: Dictionary<String, Int>) -> Dictionary<String, Int>  {
-    return dic1;
+func addDic(a: Dictionary<String, Int>, b: Dictionary<String, Int>) -> Dictionary<String, Int>  {
+    var aX = a["x"]
+    var bX = b["x"]
+    var aY = a["y"]
+    var bY = b["y"]
+    
+    var newX = aX!+bX!
+    var newY = aY!+bY!
+    
+    return ["x": newX, "y": newY];
 }
-var occupations = [
-    "Malcolm": "Captain",
-    "Kaylee": "Mechanic",
-]
+
+func subDic(a: Dictionary<String, Int>, b: Dictionary<String, Int>) -> Dictionary<String, Int>  {
+    var aX = a["x"]
+    var bX = b["x"]
+    var aY = a["y"]
+    var bY = b["y"]
+    
+    var newX = aX!+bX!
+    var newY = aY!+bY!
+    
+    return ["x": newX, "y": newY];
+}
+print(addDic(point3, b: point4))
+print(subDic(point3, b: point4))
 
 
 
